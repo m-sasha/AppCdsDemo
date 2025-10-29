@@ -1,6 +1,7 @@
 #!/bin/sh
 set -v
 
+# Remember script directory
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Build a utility to get current time very quickly
