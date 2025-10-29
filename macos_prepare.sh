@@ -1,6 +1,8 @@
 #!/bin/sh
 set -v
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 # Build a utility to get current time very quickly
 gcc ./getms.c -o ./getms
 
@@ -28,3 +30,6 @@ jlink --generate-cds-archive --output $RUNTIME_DIR --add-modules java.base,java.
 cd "$APP_DIR" || exit
 export JAVA_TOOL_OPTIONS="-XX:ArchiveClassesAtExit=Contents/app/app.jsa -Xlog:cds"
 ./Contents/MacOS/AppCdsDemo false true
+
+# Make a copy of the app in the root directory
+cp -r "$APP_DIR" "$SCRIPT_DIR/"
