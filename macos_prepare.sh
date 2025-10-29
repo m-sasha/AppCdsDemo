@@ -2,7 +2,8 @@
 set -v
 
 # Set up to use JBR
-JAVA_DIR=~/Library/Java/JavaVirtualMachines/jbr-21.0.7  # Must be 21 or newer
+#JAVA_DIR=~/Library/Java/JavaVirtualMachines/jbr-21.0.8  # Must be 21 or newer
+JAVA_DIR=~/Library/Java/JavaVirtualMachines/jbrsdk-21.0.7-osx-aarch64-b1038.54  # Must be 21 or newer
 export JAVA_HOME=$JAVA_DIR/Contents/Home/
 export PATH=$JAVA_HOME/bin/:"$PATH"
 java -version
@@ -25,3 +26,6 @@ jlink --generate-cds-archive --output $RUNTIME_DIR --add-modules java.base,java.
 cd "$APP_DIR" || exit
 export JAVA_TOOL_OPTIONS="-XX:ArchiveClassesAtExit=Contents/app/app.jsa -Xlog:cds"
 ./Contents/MacOS/AppCdsDemo false true
+
+# Build a utility to get current time very quickly
+gcc ./getms.c -o ./getms
