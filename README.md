@@ -11,6 +11,7 @@ The project includes two sets of three scripts (one set for Windows and one set 
   3. Creates a copy of the app in the project's root directory.
 - `win/macos_run_normal.sh`: Runs the app's copy without AppCDS
 - `win/macos_run_appcds.sh`: Runs the app's copy with AppCDS
+You may need to use cygwin, or some sort of unix shell to run the Windows scripts.
 
 After you've run the `prepare` script, you can run the `run_normal` and `run_appcds` scripts and see that the AppCDS 
 version is significantly faster.
