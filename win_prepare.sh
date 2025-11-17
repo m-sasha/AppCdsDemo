@@ -33,4 +33,5 @@ export JAVA_TOOL_OPTIONS="-XX:ArchiveClassesAtExit=app/app.jsa -Xlog:cds"
 ./AppCdsDemo.exe false true
 
 # Make a copy of the app in the root directory
+rm -rf "$SCRIPT_DIR/AppCdsDemo"
 cp -r "$APP_DIR" "$SCRIPT_DIR/"

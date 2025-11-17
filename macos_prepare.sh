@@ -33,4 +33,5 @@ export JAVA_TOOL_OPTIONS="-XX:ArchiveClassesAtExit=Contents/app/app.jsa -Xlog:cd
 ./Contents/MacOS/AppCdsDemo false true
 
 # Make a copy of the app in the root directory
+rm -rf "$SCRIPT_DIR/AppCdsDemo.app"
 cp -r "$APP_DIR" "$SCRIPT_DIR/"
